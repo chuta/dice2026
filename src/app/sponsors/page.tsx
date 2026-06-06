@@ -9,7 +9,7 @@ import { SITE, STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Sponsors",
-  description: "Partner with DICE 2026 — Africa's premier autonomous digital economy conference. Sponsorship tiers and packages.",
+  description: "Partner with DICE 2026. Africa's premier autonomous digital economy conference. Sponsorship tiers and packages.",
   path: "/sponsors",
   keywords: ["conference sponsorship Africa", "tech event sponsorship Nigeria"],
 });

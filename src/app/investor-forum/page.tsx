@@ -7,7 +7,7 @@ import { ECOSYSTEM_STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Investor Forum",
-  description: "Request access to the DICE 2026 Investor Forum — curated deal flow and private sessions with Africa's top startups.",
+  description: "Request access to the DICE 2026 Investor Forum. Curated deal flow and private sessions with Africa's top startups.",
   path: "/investor-forum",
   keywords: ["Africa startup investor conference", "VC conference Lagos"],
 });

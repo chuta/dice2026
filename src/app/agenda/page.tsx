@@ -31,7 +31,7 @@ export default function AgendaPage() {
         return (
           <Section key={day} variant={day === 1 ? "base" : "deep"}>
             <h2 className="mb-8 font-headline text-2xl font-bold">
-              Day {day} — August {day === 1 ? "21" : "22"}, 2026
+              Day {day}, August {day === 1 ? "21" : "22"}, 2026
             </h2>
             <div className="relative space-y-0">
               {sessions.map((session, i) => (

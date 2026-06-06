@@ -267,9 +267,9 @@ export const ticketTiers: TicketTier[] = [
     id: "standard",
     name: "Standard Pass",
     price: "TBD",
-    priceNote: "Pricing opens soon — register interest",
+    priceNote: "Early bird pricing available",
     inclusions: [
-      "Full conference access — both days",
+      "Full conference access, both days",
       "Exhibition floor access",
       "Networking sessions",
       "Digital programme guide",
@@ -279,7 +279,7 @@ export const ticketTiers: TicketTier[] = [
     id: "executive",
     name: "Executive Pass",
     price: "TBD",
-    priceNote: "Pricing opens soon — register interest",
+    priceNote: "Early bird pricing available",
     recommended: true,
     inclusions: [
       "All Standard Pass benefits",
@@ -293,7 +293,7 @@ export const ticketTiers: TicketTier[] = [
     id: "institutional",
     name: "Institutional Pass",
     price: "TBD",
-    priceNote: "For government & policy leaders · pricing opens soon",
+    priceNote: "For government & policy leaders",
     inclusions: [
       "All Executive Pass benefits",
       "Government Forum access",
@@ -305,7 +305,7 @@ export const ticketTiers: TicketTier[] = [
     id: "group",
     name: "Group Pass (5+)",
     price: "TBD",
-    priceNote: "Team registration · pricing opens soon",
+    priceNote: "Team registration",
     inclusions: [
       "All Standard Pass benefits per attendee",
       "Discounted group rate",
@@ -443,7 +443,7 @@ export const pillars: Pillar[] = [
   {
     title: "Strategic Convening",
     description:
-      "A single institutional venue where intelligence, trust, identity, and capital converge — with government, capital, and enterprise buyers in attendance.",
+      "A single institutional venue where intelligence, trust, identity, and capital converge, with government, capital, and enterprise buyers in attendance.",
   },
   {
     title: "Policy Alignment",
@@ -466,7 +466,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "1",
     quote:
-      "DICE represents the institutional maturity Africa's digital economy has been building toward — a convening where policy, capital, and technology operate at the same table.",
+      "DICE represents the institutional maturity Africa's digital economy has been building toward, a convening where policy, capital, and technology operate at the same table.",
     name: "Emenike Eleonu",
     title: "Assistant Director, Digital Economy",
     organization: "Central Bank of Nigeria",

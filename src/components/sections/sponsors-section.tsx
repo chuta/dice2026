@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
-import { CTA, SITE, STATS } from "@/lib/constants";
+import { CTA, SITE } from "@/lib/constants";
 
 export function SponsorsSection() {
   return (
@@ -12,7 +12,7 @@ export function SponsorsSection() {
       <SectionHeader
         eyebrow="Sponsors"
         title="Partner With Africa's Most Important Technology Gathering"
-        description={`Position your brand before ${STATS[0].value} delegates, ${STATS[3].value} government agencies, and the institutional investors shaping Africa's digital economy.`}
+        description="Join leading global brands investing in visibility among government delegations, institutional investors, and enterprise decision-makers."
         align="center"
         className="mx-auto text-center"
       />
@@ -29,7 +29,7 @@ export function SponsorsSection() {
           />
         </div>
         <p className="mt-6 text-center text-text-secondary">
-          {SITE.leadSponsor} — {SITE.leadSponsorTagline}
+          {SITE.leadSponsor} - {SITE.leadSponsorTagline}
         </p>
         <div className="mt-4 flex justify-center">
           <Button href={SITE.leadSponsorUrl} variant="tertiary" showArrow external>
@@ -53,12 +53,9 @@ export function SponsorsSection() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <div className="mt-10 flex justify-center">
         <Button href={CTA.sponsor.href} size="lg" showArrow>
           {CTA.sponsor.label}
-        </Button>
-        <Button href="/contact" variant="secondary" size="lg">
-          Request Sponsorship Deck
         </Button>
       </div>
     </Section>

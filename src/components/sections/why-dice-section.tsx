@@ -9,9 +9,9 @@ export function WhyDiceSection() {
   return (
     <Section id="why-dice" variant="base">
       <SectionHeader
-        eyebrow="Why DICE Matters"
+        eyebrow="Why Decentralized Intelligence Matters"
         title="Africa's Defining Platform for the Autonomous Digital Economy"
-        description="As intelligence, trust, identity, and capital converge, institutions require a convening designed for economic coordination — not technology spectacle."
+        description="As intelligence, trust, identity, and capital converge, institutions require a convening designed for economic coordination, not technology spectacle."
       />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {pillars.map((pillar) => (

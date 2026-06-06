@@ -4,7 +4,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Privacy Policy",
-  description: "DICE 2026 privacy policy — how we collect, use, and protect your personal information.",
+  description: "DICE 2026 privacy policy. How we collect, use, and protect your personal information.",
   path: "/privacy",
 });
 

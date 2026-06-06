@@ -8,7 +8,7 @@ import { CTA, SITE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Venue & Travel",
-  description: "The Civic Centre, Victoria Island, Lagos — venue details, travel guidance, and accommodation for DICE 2026.",
+  description: "The Civic Centre, Victoria Island, Lagos. Venue details, travel guidance, and accommodation for DICE 2026.",
   path: "/venue",
   keywords: ["Civic Centre Lagos conference", "Victoria Island event venue"],
 });
@@ -19,7 +19,7 @@ export default function VenuePage() {
       <PageHero
         eyebrow="Venue & Travel"
         title={SITE.venue}
-        description="Victoria Island, Lagos — Africa's financial capital. World-class convening facilities in the heart of the city's business district."
+        description="Victoria Island, Lagos. Africa's financial capital. World-class convening facilities in the heart of the city's business district."
         cta={CTA.register}
       />
       <Section variant="base">
@@ -38,7 +38,7 @@ export default function VenuePage() {
             <BuildingOffice2Icon className="h-6 w-6 text-accent-cyan" />
             <h3 className="mt-4 font-headline font-semibold">Getting There</h3>
             <p className="mt-2 text-sm text-text-secondary">
-              Murtala Muhammed International Airport (LOS) — 45 minutes to Victoria Island. Ride-hailing and hotel shuttles available.
+              Murtala Muhammed International Airport (LOS), approximately 45 minutes to Victoria Island. Ride-hailing and hotel shuttles available.
             </p>
           </GlassCard>
         </div>

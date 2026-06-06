@@ -8,7 +8,7 @@ import { CTA, SITE, STATS } from "@/lib/constants";
 export const metadata = createMetadata({
   title: "About DICE 2026",
   description:
-    "Learn about Africa's premier conference on the autonomous digital economy — mission, vision, and institutional positioning.",
+    "Learn about Africa's premier conference on the autonomous digital economy. Mission, vision, and institutional positioning.",
   path: "/about",
   keywords: ["about DICE 2026", "digital economy Africa conference"],
 });
@@ -29,14 +29,14 @@ export default function AboutPage() {
             <h2 className="font-headline text-2xl font-bold">Our Mission</h2>
             <p className="mt-4 leading-relaxed text-text-secondary">
               To establish the definitive annual convening where Africa&apos;s autonomous digital economy is defined,
-              financed, regulated, and built — with the institutional gravity expected of a global policy forum.
+              financed, regulated, and built with the institutional gravity expected of a global policy forum.
             </p>
           </GlassCard>
           <GlassCard>
             <h2 className="font-headline text-2xl font-bold">What Makes DICE Different</h2>
             <p className="mt-4 leading-relaxed text-text-secondary">
               DICE is not a blockchain meetup or technology festival. It is a strategic platform where intelligence,
-              trust, identity, and capital converge — designed for government delegations, institutional investors,
+              trust, identity, and capital converge, designed for government delegations, institutional investors,
               enterprise leaders, and the builders defining market infrastructure.
             </p>
           </GlassCard>

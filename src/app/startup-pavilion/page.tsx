@@ -7,7 +7,7 @@ import { ECOSYSTEM_STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Startup Pavilion",
-  description: `Apply for the DICE 2026 Startup Pavilion — showcase your startup to ${ECOSYSTEM_STATS.investors} investors and enterprise buyers.`,
+  description: `Apply for the DICE 2026 Startup Pavilion. Showcase your startup to ${ECOSYSTEM_STATS.investors} investors and enterprise buyers.`,
   path: "/startup-pavilion",
 });
 

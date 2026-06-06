@@ -19,7 +19,7 @@ export function VenueSection() {
           compact
           eyebrow="Venue"
           title="The Civic Centre, Victoria Island"
-          description="A world-class convening space in the heart of Lagos's financial district — accessible, prestigious, and equipped for institutional-scale events."
+          description="A world-class convening space in the heart of Lagos's financial district, accessible, prestigious, and equipped for institutional-scale events."
           cta={{ label: "Plan Your Visit", href: "/venue" }}
         />
       </div>

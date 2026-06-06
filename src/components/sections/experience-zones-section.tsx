@@ -8,7 +8,7 @@ export function ExperienceZonesSection() {
     <Section id="experience-zones" variant="base">
       <SectionHeader
         eyebrow="Experience Zones"
-        title="Beyond the Programme — Immersive Zones Across the Venue"
+        title="Beyond the Programme: Immersive Zones Across the Venue"
         description="Dedicated environments for startups, investors, policymakers, exhibitions, and hands-on technical demonstrations."
       />
       <div className="flex gap-4 overflow-x-auto pb-4 lg:grid lg:grid-cols-5 lg:overflow-visible">

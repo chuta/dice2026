@@ -7,7 +7,7 @@ import { STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Government Forum",
-  description: "Register your government delegation for DICE 2026 — policy programming on Africa's autonomous digital economy.",
+  description: "Register your government delegation for DICE 2026. Policy programming on Africa's autonomous digital economy.",
   path: "/government-forum",
   keywords: ["government blockchain policy Africa", "digital economy policy conference"],
 });

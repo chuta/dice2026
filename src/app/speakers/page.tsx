@@ -7,7 +7,7 @@ import { CTA, FEATURED_SPEAKERS_COUNT, STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Speakers",
-  description: `DICE 2026 speakers — ${FEATURED_SPEAKERS_COUNT} confirmed, targeting ${STATS[1].value} global leaders in AI, blockchain, policy, and digital economy infrastructure.`,
+  description: `DICE 2026 speakers. ${FEATURED_SPEAKERS_COUNT} confirmed, targeting ${STATS[1].value} global leaders in AI, blockchain, policy, and digital economy infrastructure.`,
   path: "/speakers",
   keywords: ["DICE 2026 speakers", "tech speakers Africa"],
 });
@@ -18,7 +18,7 @@ export default function SpeakersPage() {
       <PageHero
         eyebrow="Speakers"
         title="Voices Shaping Africa's Digital Future"
-        description={`${FEATURED_SPEAKERS_COUNT} leaders confirmed with the full faculty targeting ${STATS[1].value}. Regulators, enterprise executives, and policy architects on the DICE 2026 stage.`}
+        description="Join policymakers, investors, enterprise executives, and pioneering builders on the DICE 2026 stage."
         cta={{ label: "Apply to Speak", href: "/contact" }}
         secondaryCta={CTA.register}
       />

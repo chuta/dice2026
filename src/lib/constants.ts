@@ -4,13 +4,13 @@ export const SITE = {
   tagline: "Where Intelligence, Trust, Identity and Capital Converge",
   theme: "Building Africa's Autonomous Digital Economy",
   description:
-    "The strategic convening for Africa's autonomous digital economy — aligning policymakers, institutional capital, enterprise leaders, and builders. August 21–22, 2026, Lagos.",
+    "Africa's premier conference on the autonomous digital economy. August 21–22, 2026 at The Civic Centre, Victoria Island, Lagos.",
   url: "https://dice2026.com",
   organizer: "Blockchain Nigeria User Group",
   organizerShort: "BNUG",
   leadSponsor: "Ubuntu Tribe",
   leadSponsorUrl: "https://utribe.one/",
-  leadSponsorTagline: "Building community-powered digital assets",
+  leadSponsorTagline: "Digital Gold Ownership Simplified!",
   date: "August 21–22, 2026",
   dateISO: {
     start: "2026-08-21T09:00:00+01:00",
@@ -24,18 +24,18 @@ export const SITE = {
 
 /** Canonical event scale — reference everywhere, never hardcode */
 export const STATS = [
-  { value: "5,000+", label: "Delegates" },
-  { value: "150+", label: "Speakers" },
+  { value: "2,000+", label: "Delegates" },
+  { value: "20+", label: "Speakers" },
   { value: "50+", label: "Countries" },
-  { value: "20+", label: "Gov Agencies" },
+  { value: "10+", label: "Gov Agencies" },
 ] as const;
 
 export const FEATURED_SPEAKERS_COUNT = 8;
 
 export const ECOSYSTEM_STATS = {
-  startups: "100+",
-  investors: "50+",
-  curatedMeetings: "200+",
+  startups: "40+",
+  investors: "10+",
+  curatedMeetings: "20+",
 } as const;
 
 export const NAV_LINKS = [

@@ -5,12 +5,12 @@ import { SectionHeader } from "@/components/ui/section-header";
 export function AutonomousEconomySection() {
   return (
     <Section id="autonomous-economy" variant="deep">
-      <div className="grid items-center gap-10 lg:grid-cols-2">
+      <div className="grid items-center gap-12 lg:grid-cols-2">
         <SectionHeader
           compact
           eyebrow="The Autonomous Digital Economy"
-          title="Defining the Infrastructure of Africa's Next Economic Order"
-          description="The autonomous digital economy represents the next phase of market evolution — systems that verify, decide, and transact with institutional-grade reliability. DICE 2026 is where Africa's architects of this transformation align policy, infrastructure, and capital."
+          title="Where Intelligence, Trust, Identity and Capital Converge"
+          description="The autonomous digital economy represents the next phase of market evolution, systems that verify, decide, and transact with institutional-grade reliability. Decentralized Intelligence 2026 is where Africa's architects of this transformation gather to align policy, infrastructure, and capital."
           cta={{ label: "Explore Conference Tracks", href: "/tracks" }}
         />
         <div className="relative flex aspect-square max-w-lg items-center justify-center justify-self-center">

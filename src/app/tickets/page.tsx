@@ -9,7 +9,7 @@ import { CTA } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Tickets",
-  description: "Register for DICE 2026 — conference passes from Standard to Institutional. August 21–22, Lagos.",
+  description: "Register for DICE 2026. Conference passes from Standard to Institutional. August 21–22, Lagos.",
   path: "/tickets",
   keywords: ["DICE 2026 tickets", "tech conference tickets Lagos"],
 });

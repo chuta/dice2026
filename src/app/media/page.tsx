@@ -8,7 +8,7 @@ import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Media Centre",
-  description: "DICE 2026 media centre — press accreditation, media kit, and communications resources.",
+  description: "DICE 2026 media centre. Press accreditation, media kit, and communications resources.",
   path: "/media",
 });
 
@@ -30,7 +30,7 @@ export default function MediaPage() {
           </p>
           <Button variant="secondary" className="mt-6" showArrow>
             <ArrowDownTrayIcon className="h-4 w-4" />
-            Media Kit — Coming Soon
+            Media Kit (Coming Soon)
           </Button>
         </GlassCard>
       </Section>

@@ -38,7 +38,7 @@ export default function ExhibitionPage() {
       </Section>
       <Section id="inquiry" variant="deep">
         <h2 className="mb-8 text-center font-headline text-2xl font-bold">Exhibitor Inquiry</h2>
-        <ContactForm defaultSubject="Exhibitor" subjects={["Exhibitor", "Exhibition — Standard", "Exhibition — Premium", "Exhibition — Pavilion"]} />
+        <ContactForm defaultSubject="Exhibitor" subjects={["Exhibitor", "Exhibition, Standard", "Exhibition, Premium", "Exhibition, Pavilion"]} />
       </Section>
     </>
   );

@@ -19,7 +19,7 @@ export function WhoAttendsSection() {
       <SectionHeader
         eyebrow="Who Attends"
         title="The Decision-Makers Building Africa's Digital Infrastructure"
-        description={`${STATS[0].value} delegates spanning government officials, institutional investors, enterprise executives, founders, and researchers.`}
+        description={`${STATS[0].value} delegates from government, capital markets, enterprise, technology innovation thought leaders, founders, and the global builder community.`}
         align="center"
         className="mx-auto text-center"
       />
@@ -33,8 +33,8 @@ export function WhoAttendsSection() {
                 <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-accent-cyan/10 transition-colors group-hover:bg-accent-cyan/20">
                   <Icon className="h-6 w-6 text-accent-cyan" />
                 </div>
-                <h3 className="font-headline text-base font-semibold group-hover:text-accent-cyan">{persona.label}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">{persona.description}</p>
+                <h3 className="font-headline text-sm font-semibold group-hover:text-accent-cyan">{persona.label}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-text-secondary">{persona.description}</p>
               </GlassCard>
             </Link>
           );
