@@ -2,10 +2,18 @@ import { CheckIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { CTA } from "@/lib/constants";
+import {
+  EARLY_BIRD_DISCOUNT_RATE,
+  formatNgn,
+  getEarlyBirdPrice,
+} from "@/lib/tickets/pricing";
 import type { TicketTier } from "@/types/content";
 import { cn } from "@/lib/utils";
 
 export function TicketTierCard({ tier }: { tier: TicketTier }) {
+  const earlyBirdPrice = getEarlyBirdPrice(tier.fullPriceNgn);
+  const discountPercent = Math.round(EARLY_BIRD_DISCOUNT_RATE * 100);
+
   return (
     <GlassCard
       className={cn(
@@ -19,7 +27,15 @@ export function TicketTierCard({ tier }: { tier: TicketTier }) {
         </span>
       )}
       <h3 className="font-headline text-xl font-semibold">{tier.name}</h3>
-      <p className="mt-2 font-mono text-3xl font-medium text-accent-cyan">{tier.price}</p>
+      <div className="mt-2">
+        <p className="font-mono text-lg text-text-muted line-through decoration-text-muted/80">
+          {formatNgn(tier.fullPriceNgn)}
+        </p>
+        <p className="font-mono text-3xl font-medium text-accent-cyan">{formatNgn(earlyBirdPrice)}</p>
+      </div>
+      <p className="mt-1 text-xs font-medium text-ecosystem-green">
+        Early bird — {discountPercent}% off
+      </p>
       {tier.priceNote && <p className="mt-1 text-xs text-text-muted">{tier.priceNote}</p>}
       <ul className="mt-6 flex-1 space-y-3">
         {tier.inclusions.map((item) => (
@@ -30,7 +46,7 @@ export function TicketTierCard({ tier }: { tier: TicketTier }) {
         ))}
       </ul>
       <Button
-        href={`${CTA.register.href}?tier=${tier.id}`}
+        href={`/tickets/checkout?tier=${tier.id}`}
         size="md"
         className="mt-8 w-full"
         showArrow

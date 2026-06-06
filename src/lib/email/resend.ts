@@ -1,20 +1,20 @@
 import { Resend } from "resend";
 import { SITE } from "@/lib/constants";
+import { renderContactConfirmationEmail } from "@/lib/email/templates/contact-confirmation";
+import {
+  renderContactNotificationEmail,
+  renderNewsletterNotificationEmail,
+  renderTicketNotificationEmail,
+} from "@/lib/email/templates/internal-notification";
+import { renderNewsletterConfirmationEmail } from "@/lib/email/templates/newsletter-confirmation";
+import { renderTicketConfirmationEmail } from "@/lib/email/templates/ticket-confirmation";
+import { renderTicketPaymentInstructionsEmail } from "@/lib/email/templates/ticket-payment-instructions";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const fromEmail =
   process.env.RESEND_FROM_EMAIL ?? `DICE 2026 <${SITE.email}>`;
 const notifyEmail = process.env.RESEND_NOTIFY_EMAIL ?? SITE.email;
-
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
 
 export async function sendContactNotificationEmail(input: {
   id: string;
@@ -35,17 +35,15 @@ export async function sendContactNotificationEmail(input: {
       to: [notifyEmail],
       replyTo: input.email,
       subject: `[DICE 2026] ${input.subject}. ${input.name}`,
-      html: `
-        <h2>New contact form submission</h2>
-        <p><strong>Name:</strong> ${escapeHtml(input.name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(input.email)}</p>
-        <p><strong>Company:</strong> ${escapeHtml(input.company || "—")}</p>
-        <p><strong>Subject:</strong> ${escapeHtml(input.subject)}</p>
-        <p><strong>Source:</strong> ${escapeHtml(input.sourcePath || SITE.url)}</p>
-        <hr />
-        <p style="white-space:pre-wrap">${escapeHtml(input.message)}</p>
-        <p style="color:#666;font-size:12px">Submission ID: ${input.id}</p>
-      `,
+      html: renderContactNotificationEmail({
+        name: input.name,
+        email: input.email,
+        company: input.company,
+        subject: input.subject,
+        message: input.message,
+        sourcePath: input.sourcePath,
+        submissionId: input.id,
+      }),
     },
     { idempotencyKey: `contact-notify/${input.id}` }
   );
@@ -69,12 +67,10 @@ export async function sendContactConfirmationEmail(input: {
       from: fromEmail,
       to: [input.email],
       subject: "We received your message. DICE 2026",
-      html: `
-        <p>Dear ${escapeHtml(input.name)},</p>
-        <p>Thank you for contacting DICE 2026. We have received your inquiry regarding <strong>${escapeHtml(input.subject)}</strong>.</p>
-        <p>Our team will respond within 48 hours.</p>
-        <p>Best regards,<br />The DICE 2026 Team<br />${SITE.email}</p>
-      `,
+      html: renderContactConfirmationEmail({
+        name: input.name,
+        subject: input.subject,
+      }),
     },
     { idempotencyKey: `contact-confirm/${input.id}` }
   );
@@ -96,13 +92,99 @@ export async function sendNewsletterConfirmationEmail(input: {
       from: fromEmail,
       to: [input.email],
       subject: "You're on the DICE 2026 programme list",
-      html: `
-        <p>Thank you for subscribing to DICE 2026 updates.</p>
-        <p>You will be among the first to receive programme announcements, speaker confirmations, and ticket release notices.</p>
-        <p>Best regards,<br />The DICE 2026 Team<br />${SITE.email}</p>
-      `,
+      html: renderNewsletterConfirmationEmail(),
     },
     { idempotencyKey: `newsletter-confirm/${input.id}` }
+  );
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function sendTicketPaymentInstructionsEmail(input: {
+  id: string;
+  name: string;
+  email: string;
+  tierName: string;
+  amountLabel: string;
+  orderReference: string;
+  paymentLink: string;
+  fixedAmountLink: boolean;
+}) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const { data, error } = await resend.emails.send(
+    {
+      from: fromEmail,
+      to: [input.email],
+      subject: `Complete your DICE 2026 payment — ${input.tierName}`,
+      html: renderTicketPaymentInstructionsEmail(input),
+    },
+    { idempotencyKey: `ticket-instructions/${input.id}` }
+  );
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function sendTicketConfirmationEmail(input: {
+  id: string;
+  name: string;
+  email: string;
+  tierName: string;
+  amountLabel: string;
+  reference: string;
+}) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const { data, error } = await resend.emails.send(
+    {
+      from: fromEmail,
+      to: [input.email],
+      subject: `Your DICE 2026 registration is confirmed — ${input.tierName}`,
+      html: renderTicketConfirmationEmail({
+        name: input.name,
+        tierName: input.tierName,
+        amountLabel: input.amountLabel,
+        reference: input.reference,
+      }),
+    },
+    { idempotencyKey: `ticket-confirm/${input.id}` }
+  );
+
+  if (error) throw new Error(error.message);
+  return data;
+}
+
+export async function sendTicketNotificationEmail(input: {
+  id: string;
+  name: string;
+  email: string;
+  tierName: string;
+  amountLabel: string;
+  reference: string;
+  paymentMethod?: string;
+}) {
+  if (!process.env.RESEND_API_KEY) {
+    throw new Error("RESEND_API_KEY is not configured.");
+  }
+
+  const { data, error } = await resend.emails.send(
+    {
+      from: fromEmail,
+      to: [notifyEmail],
+      replyTo: input.email,
+      subject: `[DICE 2026] Ticket payment — ${input.tierName}`,
+      html: renderTicketNotificationEmail({
+        ...input,
+        orderId: input.id,
+      }),
+    },
+    { idempotencyKey: `ticket-notify/${input.id}` }
   );
 
   if (error) throw new Error(error.message);
@@ -123,12 +205,11 @@ export async function sendNewsletterNotificationEmail(input: {
       from: fromEmail,
       to: [notifyEmail],
       subject: `[DICE 2026] New newsletter subscriber`,
-      html: `
-        <h2>New newsletter subscriber</h2>
-        <p><strong>Email:</strong> ${escapeHtml(input.email)}</p>
-        <p><strong>Source:</strong> ${escapeHtml(input.sourcePath || SITE.url)}</p>
-        <p style="color:#666;font-size:12px">Subscriber ID: ${input.id}</p>
-      `,
+      html: renderNewsletterNotificationEmail({
+        email: input.email,
+        sourcePath: input.sourcePath,
+        subscriberId: input.id,
+      }),
     },
     { idempotencyKey: `newsletter-notify/${input.id}` }
   );

@@ -36,7 +36,8 @@ export interface AgendaSession {
 export interface TicketTier {
   id: string;
   name: string;
-  price: string;
+  /** Full price in Nigerian Naira before early bird discount */
+  fullPriceNgn: number;
   priceNote?: string;
   recommended?: boolean;
   inclusions: string[];

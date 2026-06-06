@@ -266,8 +266,8 @@ export const ticketTiers: TicketTier[] = [
   {
     id: "standard",
     name: "Standard Pass",
-    price: "TBD",
-    priceNote: "Early bird pricing available",
+    fullPriceNgn: 25_000,
+    priceNote: "40% early bird discount applied",
     inclusions: [
       "Full conference access, both days",
       "Exhibition floor access",
@@ -278,8 +278,8 @@ export const ticketTiers: TicketTier[] = [
   {
     id: "executive",
     name: "Executive Pass",
-    price: "TBD",
-    priceNote: "Early bird pricing available",
+    fullPriceNgn: 35_000,
+    priceNote: "40% early bird discount applied",
     recommended: true,
     inclusions: [
       "All Standard Pass benefits",
@@ -292,7 +292,7 @@ export const ticketTiers: TicketTier[] = [
   {
     id: "institutional",
     name: "Institutional Pass",
-    price: "TBD",
+    fullPriceNgn: 50_000,
     priceNote: "For government & policy leaders",
     inclusions: [
       "All Executive Pass benefits",
@@ -304,8 +304,8 @@ export const ticketTiers: TicketTier[] = [
   {
     id: "group",
     name: "Group Pass (5+)",
-    price: "TBD",
-    priceNote: "Team registration",
+    fullPriceNgn: 100_000,
+    priceNote: "Team registration — 5+ attendees",
     inclusions: [
       "All Standard Pass benefits per attendee",
       "Discounted group rate",

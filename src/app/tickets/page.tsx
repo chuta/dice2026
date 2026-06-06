@@ -20,7 +20,7 @@ export default function TicketsPage() {
       <PageHero
         eyebrow="Tickets"
         title="Register for DICE 2026"
-        description="Pricing opens soon. Select your pass tier and register interest for priority access when tickets go live."
+        description="Early bird pricing is live — 40% off all passes. Select your tier and complete secure payment via Korapay."
         secondaryCta={CTA.sponsor}
       />
       <Section variant="base">
@@ -32,8 +32,10 @@ export default function TicketsPage() {
       </Section>
       <Section variant="deep">
         <GlassCard className="mx-auto max-w-xl text-center">
-          <h2 className="font-headline text-xl font-bold">Early Bird Alerts</h2>
-          <p className="mt-2 text-text-secondary">Be first to know when tickets go on sale.</p>
+          <h2 className="font-headline text-xl font-bold">Programme Updates</h2>
+          <p className="mt-2 text-text-secondary">
+            Subscribe for speaker announcements, agenda releases, and venue logistics.
+          </p>
           <div className="mt-6 flex justify-center">
             <NewsletterForm />
           </div>

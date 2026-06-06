@@ -6,6 +6,7 @@ interface PageSEO {
   description: string;
   path?: string;
   keywords?: string[];
+  noIndex?: boolean;
 }
 
 export function createMetadata({
@@ -13,6 +14,7 @@ export function createMetadata({
   description,
   path = "",
   keywords = [],
+  noIndex = false,
 }: PageSEO): Metadata {
   const url = `${SITE.url}${path}`;
   const fullTitle = path === "" || path === "/" ? `${SITE.name} — ${SITE.theme}` : `${title} | ${SITE.name}`;
@@ -53,6 +55,12 @@ export function createMetadata({
     alternates: {
       canonical: url,
     },
+    ...(noIndex && {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }),
   };
 }
 
