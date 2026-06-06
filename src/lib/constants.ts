@@ -5,7 +5,7 @@ export const SITE = {
   theme: "Building Africa's Autonomous Digital Economy",
   description:
     "Africa's premier conference on the autonomous digital economy. August 21–22, 2026 at The Civic Centre, Victoria Island, Lagos.",
-  url: "https://dice2026.com",
+  url: "https://dice2026.africa",
   organizer: "Blockchain Nigeria User Group",
   organizerShort: "BNUG",
   leadSponsor: "Ubuntu Tribe",
@@ -19,7 +19,7 @@ export const SITE = {
   time: "9:00 AM Daily",
   venue: "The Civic Centre",
   venueAddress: "Ozumba Mbadiwe Avenue, Victoria Island, Lagos, Nigeria",
-  email: "info@dice2026.com",
+  email: "info@dice2026.africa",
 } as const;
 
 /** Canonical event scale — reference everywhere, never hardcode */

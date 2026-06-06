@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Privacy Policy",
@@ -24,7 +25,7 @@ export default function PrivacyPage() {
           <h2 className="font-headline text-xl font-bold text-text-primary">How We Use Your Information</h2>
           <p>To process registrations, respond to inquiries, send programme updates (with consent), and improve the website experience.</p>
           <h2 className="font-headline text-xl font-bold text-text-primary">Contact</h2>
-          <p>Privacy inquiries: privacy@dice2026.com</p>
+          <p>Privacy inquiries: {SITE.email}</p>
         </div>
       </Section>
     </>

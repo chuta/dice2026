@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Terms of Service",
@@ -23,7 +24,7 @@ export default function TermsPage() {
           <h2 className="font-headline text-xl font-bold text-text-primary">Code of Conduct</h2>
           <p>All participants are expected to maintain professional conduct consistent with an institutional-grade conference environment.</p>
           <h2 className="font-headline text-xl font-bold text-text-primary">Contact</h2>
-          <p>Legal inquiries: legal@dice2026.com</p>
+          <p>Legal inquiries: {SITE.email}</p>
         </div>
       </Section>
     </>

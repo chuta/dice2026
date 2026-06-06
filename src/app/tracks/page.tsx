@@ -1,4 +1,5 @@
 import { tracks } from "@/content/site-data";
+import { ProposeTrackCard } from "@/components/cards/propose-track-card";
 import { TrackCard } from "@/components/cards/track-card";
 import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/ui/section";
@@ -22,10 +23,11 @@ export default function TracksPage() {
         cta={CTA.register}
       />
       <Section variant="base">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tracks.map((track) => (
             <TrackCard key={track.slug} track={track} />
           ))}
+          <ProposeTrackCard />
         </div>
       </Section>
     </>

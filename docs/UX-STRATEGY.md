@@ -352,7 +352,7 @@ Awareness → Media Centre → Accreditation → Access → Coverage
 ### 6.1 Complete Sitemap
 
 ```
-dice2026.com/
+dice2026.africa/
 │
 ├── / (Homepage)
 │
@@ -1235,7 +1235,7 @@ Examples:
 | 2 | **Confirmed speakers** — How many confirmed vs. placeholder for launch? | Speakers section credibility |
 | 3 | **Past event data** — Is there DICE 2024/2025 data for testimonials and stats? | Social proof authenticity |
 | 4 | **BNUG URL** — Confirm official BNUG website URL for links | About BNUG section |
-| 5 | **Domain** — Confirm `dice2026.com` or alternative | SEO, all links |
+| 5 | **Domain** — `dice2026.africa` (confirmed) | SEO, all links |
 | 6 | **Government speakers** — Any confirmed policy leaders for Government Forum section? | Institutional credibility |
 | 7 | **Sponsorship pricing** — Tier price ranges for Sponsors page? | Sponsor conversion |
 | 8 | **CMS decision** — Headless CMS (Sanity, Contentful), local JSON, or Supabase? | Phase 3 architecture |

@@ -45,9 +45,28 @@ npm start
 
 ### Environment Variables
 
+Copy `.env.example` to `.env` and fill in values:
+
 | Variable | Description |
 |----------|-------------|
-| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (e.g. `https://dice2026.com`) |
+| `RESEND_API_KEY` | Resend API key (server-only) |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role / secret key (server-only, required for form writes) |
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL (e.g. `https://dice2026.africa`) |
+
+### Database setup (forms)
+
+Apply the migration in the Supabase SQL Editor, or run:
+
+```bash
+supabase link --project-ref <your-project-ref>
+supabase db push
+```
+
+Migration file: `supabase/migrations/20260606190000_form_submissions.sql`
+
+Creates `contact_submissions` and `newsletter_subscribers` tables with RLS enabled.
 
 ## Project Structure
 

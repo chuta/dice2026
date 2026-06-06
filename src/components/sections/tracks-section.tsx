@@ -1,4 +1,5 @@
 import { tracks } from "@/content/site-data";
+import { ProposeTrackCard } from "@/components/cards/propose-track-card";
 import { TrackCard } from "@/components/cards/track-card";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -16,6 +17,7 @@ export function TracksSection() {
         {tracks.map((track) => (
           <TrackCard key={track.slug} track={track} />
         ))}
+        <ProposeTrackCard />
       </div>
     </Section>
   );

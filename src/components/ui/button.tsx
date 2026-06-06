@@ -15,6 +15,7 @@ interface ButtonProps {
   type?: "button" | "submit";
   showArrow?: boolean;
   external?: boolean;
+  disabled?: boolean;
 }
 
 const variants: Record<ButtonVariant, string> = {
@@ -42,11 +43,13 @@ export function Button({
   type = "button",
   showArrow = false,
   external = false,
+  disabled = false,
 }: ButtonProps) {
   const classes = cn(
     "group inline-flex items-center justify-center gap-2 rounded-[10px] font-headline font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-surface-deep",
     variants[variant],
     sizes[size],
+    disabled && "pointer-events-none opacity-50",
     className
   );
 
@@ -75,7 +78,7 @@ export function Button({
   }
 
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={onClick} disabled={disabled}>
       {content}
     </button>
   );
