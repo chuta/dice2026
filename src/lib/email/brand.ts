@@ -2,7 +2,7 @@ import { SITE } from "@/lib/constants";
 
 export const EMAIL_BRAND = {
   logoUrl:
-    process.env.EMAIL_LOGO_URL ?? `${SITE.url}/images/logos/dice-logo-2026.png`,
+    process.env.EMAIL_LOGO_URL ?? `${SITE.url}/images/logos/dilogo2026_white.png`,
   logoWidth: 220,
   colors: {
     background: "#E8EDF5",
