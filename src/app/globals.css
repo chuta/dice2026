@@ -75,6 +75,14 @@
   .eyebrow {
     @apply font-headline text-xs font-bold uppercase tracking-widest text-accent-cyan;
   }
+
+  .eyebrow-gold {
+    @apply font-headline text-xs font-bold uppercase tracking-widest text-warm-gold;
+  }
+
+  .eyebrow-muted {
+    @apply font-headline text-xs font-bold uppercase tracking-widest text-silver;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

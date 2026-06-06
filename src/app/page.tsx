@@ -6,6 +6,8 @@ import { ExperienceZonesSection } from "@/components/sections/experience-zones-s
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { GovernmentSection } from "@/components/sections/government-section";
 import { HeroSection } from "@/components/sections/hero-section";
+import { PartnersSliderSection } from "@/components/sections/partners-slider-section";
+import { PastEventsSection } from "@/components/sections/past-events-section";
 import { SpeakersSection } from "@/components/sections/speakers-section";
 import { SponsorsSection } from "@/components/sections/sponsors-section";
 import { StartupInvestorSection } from "@/components/sections/startup-investor-section";
@@ -20,6 +22,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <PastEventsSection />
       <WhyDiceSection />
       <AutonomousEconomySection />
       <TracksSection />
@@ -32,10 +35,11 @@ export default function HomePage() {
       <ExhibitionSection />
       <SponsorsSection />
       <TestimonialsSection />
+      <PartnersSliderSection />
       <VenueSection />
       <TicketsSection />
-      <AboutBnugSection />
       <FinalCtaSection />
+      <AboutBnugSection />
     </>
   );
 }

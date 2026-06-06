@@ -1,0 +1,15 @@
+export const pastEventImages = [
+  { src: "/images/past-events/img_1429.jpg", alt: "DICE delegates and speakers at the conference hall" },
+  { src: "/images/past-events/img_1544.jpg", alt: "Conference session with engaged attendees" },
+  { src: "/images/past-events/img_1595.jpg", alt: "Panel discussion at DICE" },
+  { src: "/images/past-events/img_5317.jpg", alt: "Large audience at DICE conference" },
+  { src: "/images/past-events/img_5404.jpg", alt: "Networking and exhibition at DICE" },
+  { src: "/images/past-events/img_8240.jpg", alt: "Keynote session at DICE" },
+  { src: "/images/past-events/img_8246.jpg", alt: "Attendees engaging with conference materials" },
+  { src: "/images/past-events/img_8263.jpg", alt: "DICE conference floor and delegates" },
+  { src: "/images/past-events/img_8276.jpg", alt: "Interactive sessions at DICE" },
+  { src: "/images/past-events/img_8440.jpg", alt: "Government and enterprise leaders at DICE" },
+  { src: "/images/past-events/img_8494.jpg", alt: "Startup showcase at DICE exhibition" },
+  { src: "/images/past-events/img_8534.jpg", alt: "Investor and founder networking at DICE" },
+  { src: "/images/past-events/img_8548.jpg", alt: "Closing plenary at DICE conference" },
+] as const;

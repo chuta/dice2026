@@ -3,7 +3,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
-import { SITE, STATS } from "@/lib/constants";
+import { CTA, SITE, STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "About DICE 2026",
@@ -20,7 +20,7 @@ export default function AboutPage() {
         eyebrow="About"
         title="The Strategic Platform for Africa's Autonomous Digital Economy"
         description="DICE 2026 convenes the institutions, capital, builders, and policymakers required to architect Africa's intelligent, decentralized economic infrastructure."
-        cta={{ label: "Register Now", href: "/tickets" }}
+        cta={CTA.register}
         secondaryCta={{ label: "Explore Tracks", href: "/tracks" }}
       />
       <Section variant="base">

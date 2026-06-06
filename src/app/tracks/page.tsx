@@ -3,6 +3,7 @@ import { TrackCard } from "@/components/cards/track-card";
 import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { CTA } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Conference Tracks",
@@ -18,7 +19,7 @@ export default function TracksPage() {
         eyebrow="Tracks"
         title="Seven Programmes. One Economic Vision."
         description="Each track delivers institutional-depth programming designed for policymakers, investors, enterprise leaders, and technical builders."
-        cta={{ label: "Buy Your Pass", href: "/tickets" }}
+        cta={CTA.register}
       />
       <Section variant="base">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

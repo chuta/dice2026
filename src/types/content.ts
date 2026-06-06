@@ -17,6 +17,7 @@ export interface Speaker {
   name: string;
   title: string;
   organization: string;
+  image?: string;
   track?: string;
   featured?: boolean;
   announced?: boolean;

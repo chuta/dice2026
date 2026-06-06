@@ -3,10 +3,11 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Exhibition",
-  description: "Book exhibition space at DICE 2026 — showcase your technology to government, enterprise, and investor delegates.",
+  description: "Book exhibition space at DICE 2026. Showcase your technology to government, enterprise, and investor delegates.",
   path: "/exhibition",
 });
 
@@ -16,7 +17,7 @@ export default function ExhibitionPage() {
       <PageHero
         eyebrow="Exhibition"
         title="Innovation Exhibition Floor"
-        description="Demonstrate your products and services to 5,000+ high-value delegates across dedicated exhibition zones at The Civic Centre."
+        description={`Demonstrate your products and services to ${STATS[0].value} high-value delegates across dedicated exhibition zones at The Civic Centre.`}
         cta={{ label: "Book Exhibition Space", href: "#inquiry" }}
         secondaryCta={{ label: "Become a Sponsor", href: "/partner" }}
       />

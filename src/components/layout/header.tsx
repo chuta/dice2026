@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Bars3Icon, ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
-import { FORUM_LINKS, NAV_LINKS } from "@/lib/constants";
+import { CTA, FORUM_LINKS, NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -89,8 +89,8 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button href="/tickets" size="sm" showArrow className="hidden sm:inline-flex">
-              Tickets
+            <Button href={CTA.register.href} size="sm" showArrow className="hidden sm:inline-flex">
+              {CTA.register.label}
             </Button>
             <button
               type="button"
@@ -177,8 +177,8 @@ export function Header() {
                 </div>
               </div>
             </nav>
-            <Button href="/tickets" className="w-full" showArrow onClick={() => setMobileOpen(false)}>
-              Register Now
+            <Button href={CTA.register.href} className="w-full" showArrow onClick={() => setMobileOpen(false)}>
+              {CTA.register.label}
             </Button>
           </div>
         </div>

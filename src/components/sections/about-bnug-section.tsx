@@ -19,9 +19,10 @@ export function AboutBnugSection() {
           </div>
         </div>
         <SectionHeader
+          compact
           eyebrow="About BNUG"
           title="Organized by Blockchain Nigeria User Group"
-          description="BNUG is Africa's leading blockchain and future-technology community, driving institutional adoption, developer education, and policy engagement across the continent. DICE 2026 represents BNUG's flagship global convening."
+          description="BNUG is Africa's leading blockchain and future-technology community, driving institutional adoption, developer education, and policy engagement across the continent. DICE 2026 represents BNUG's 18th global conference convening, since 2017."
           cta={{ label: "Learn About DICE 2026", href: "/about" }}
         />
       </div>

@@ -1,6 +1,7 @@
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
+import { CTA } from "@/lib/constants";
 import type { TicketTier } from "@/types/content";
 import { cn } from "@/lib/utils";
 
@@ -28,8 +29,13 @@ export function TicketTierCard({ tier }: { tier: TicketTier }) {
           </li>
         ))}
       </ul>
-      <Button href="/tickets" size="sm" className="mt-8 w-full" showArrow>
-        Select Pass
+      <Button
+        href={`${CTA.register.href}?tier=${tier.id}`}
+        size="md"
+        className="mt-8 w-full"
+        showArrow
+      >
+        {CTA.register.label}
       </Button>
     </GlassCard>
   );

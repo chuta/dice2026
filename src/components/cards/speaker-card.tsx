@@ -1,21 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
 import { GlassCard } from "@/components/ui/glass-card";
 import type { Speaker } from "@/types/content";
 
 export function SpeakerCard({ speaker }: { speaker: Speaker }) {
+  const hasPhoto = speaker.announced !== false && speaker.image;
+
   return (
-    <Link href={`/speakers#${speaker.slug}`} className="group block min-w-[240px] flex-shrink-0 lg:min-w-0">
+    <Link href={`/speakers#${speaker.slug}`} className="group block">
       <GlassCard className="overflow-hidden p-0">
         <div className="relative aspect-square bg-gradient-to-br from-midnight-blue to-surface-raised">
-          {speaker.announced === false ? (
+          {hasPhoto ? (
+            <Image
+              src={speaker.image!}
+              alt={speaker.name}
+              fill
+              className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+          ) : (
             <div className="flex h-full flex-col items-center justify-center p-4 text-center">
               <div className="mb-3 rounded-full bg-warm-magenta/20 px-3 py-1 text-xs font-medium text-warm-magenta">
                 Announcing Soon
               </div>
               <p className="text-sm text-text-muted">Global leader confirmation in progress</p>
             </div>
-          ) : (
-            <div className="h-full w-full bg-surface-raised" />
           )}
         </div>
         <div className="p-5">

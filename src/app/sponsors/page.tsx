@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
-import { SITE } from "@/lib/constants";
+import { SITE, STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Sponsors",
@@ -30,13 +30,13 @@ export default function SponsorsPage() {
       <PageHero
         eyebrow="Sponsors"
         title="Invest in Africa's Most Important Technology Gathering"
-        description="Reach 5,000+ delegates including government officials, institutional investors, enterprise leaders, and global builders."
+        description={`Reach ${STATS[0].value} delegates including government officials, institutional investors, enterprise leaders, and global builders.`}
         cta={{ label: "Become a Sponsor", href: "/partner" }}
         secondaryCta={{ label: "Request Sponsorship Deck", href: "/contact" }}
       />
       <Section variant="base">
         <GlassCard className="border-warm-gold/20">
-          <p className="eyebrow text-warm-gold">Title Sponsor</p>
+          <p className="eyebrow-gold">Title Sponsor</p>
           <div className="mx-auto mt-6 max-w-sm rounded-2xl bg-white p-10">
             <Image src="/images/logos/ubuntu-tribe.png" alt={SITE.leadSponsor} width={240} height={100} className="mx-auto h-auto w-full" />
           </div>

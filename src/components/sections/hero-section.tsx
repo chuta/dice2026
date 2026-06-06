@@ -3,13 +3,20 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { CalendarDaysIcon, MapPinIcon } from "@heroicons/react/24/outline";
-import { NetworkBackground } from "@/components/effects/network-background";
 import { Button } from "@/components/ui/button";
 import { StatCounter } from "@/components/ui/stat-counter";
-import { STATS, SITE } from "@/lib/constants";
+import { CTA, SITE, STATS } from "@/lib/constants";
+import { getDaysUntilEvent } from "@/lib/event";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
+  const [daysUntil, setDaysUntil] = useState(0);
+
+  useEffect(() => {
+    setDaysUntil(getDaysUntilEvent());
+  }, []);
+
   const fade = (delay: number) =>
     reduceMotion
       ? {}
@@ -20,39 +27,81 @@ export function HeroSection() {
         };
 
   return (
-    <section id="hero" className="relative flex min-h-screen items-center hero-atmosphere">
-      <NetworkBackground />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,212,255,0.12)_0%,transparent_70%)]" />
+    <section id="hero" className="relative flex min-h-screen items-center overflow-hidden">
+      <Image
+        src="/images/hero/hero-bg.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
+        aria-hidden
+      />
+
+      <div className="pointer-events-none absolute inset-0 bg-surface-deep/75" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-surface-deep/90 via-surface-deep/60 to-surface-deep/40" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface-deep via-transparent to-surface-deep/50" aria-hidden />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+        aria-hidden
+      />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 pb-32 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-32">
-        <div className="max-w-3xl">
-          <motion.div {...fade(0)} className="mb-8 hidden lg:block">
-            <Image
-              src="/images/logos/dice-logo-2026.png"
-              alt={SITE.fullName}
-              width={280}
-              height={80}
-              className="h-auto w-[220px] md:w-[280px]"
-              priority
-            />
+        <div className="max-w-4xl">
+          <motion.div {...fade(0.05)} className="mb-6 flex flex-wrap items-center gap-4">
+            <div className="flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm">
+              <span className="text-xs font-medium text-silver">Presented by</span>
+              <div className="flex items-center gap-2" aria-label={`${SITE.organizer} and ${SITE.leadSponsor}`}>
+                <Image
+                  src="/images/logos/bnugicon.png"
+                  alt={SITE.organizerShort}
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 object-contain"
+                />
+                <span className="text-xs text-silver/60" aria-hidden>
+                  &
+                </span>
+                <Image
+                  src="/images/logos/ut.png"
+                  alt={SITE.leadSponsor}
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 rounded-md object-contain"
+                />
+              </div>
+            </div>
+            {daysUntil > 0 && (
+              <span className="rounded-full border border-warm-amber/30 bg-warm-amber/10 px-4 py-2 font-mono text-xs text-warm-amber">
+                {daysUntil} days to convene
+              </span>
+            )}
           </motion.div>
 
-          <motion.p {...fade(0.1)} className="font-mono text-sm text-silver">
+          <motion.p {...fade(0.1)} className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 font-mono text-sm text-silver backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-ecosystem-green" />
             {SITE.date} · Lagos, Nigeria
           </motion.p>
 
           <motion.h1
             {...fade(0.2)}
-            className="mt-4 font-headline text-4xl font-extrabold leading-[1.08] tracking-tight md:text-5xl lg:text-6xl"
+            className="mt-6 font-headline text-5xl font-extrabold leading-[0.95] tracking-tight md:text-6xl lg:text-7xl xl:text-8xl"
           >
-            Decentralized Intelligence Conference & Exhibition 2026
+            <span className="block text-text-primary">Decentralized Intelligence</span>
+            <span className="block text-text-primary">Conference & Exhibition</span>
+            <span className="block text-gradient-cyan">2026</span>
           </motion.h1>
 
-          <motion.p {...fade(0.3)} className="mt-4 font-headline text-xl font-semibold text-text-secondary md:text-2xl">
+          <motion.p {...fade(0.3)} className="mt-6 max-w-2xl font-headline text-xl font-bold text-text-secondary md:text-2xl lg:text-3xl">
             {SITE.theme}
           </motion.p>
 
-          <motion.p {...fade(0.35)} className="mt-3 text-lg text-text-muted">
+          <motion.p {...fade(0.35)} className="mt-4 max-w-xl text-base text-text-muted md:text-lg">
             {SITE.tagline}
           </motion.p>
 
@@ -68,11 +117,11 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div {...fade(0.5)} className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/tickets" size="lg" showArrow>
-              Register Now
+            <Button href={CTA.register.href} size="lg" showArrow>
+              {CTA.register.label}
             </Button>
-            <Button href="/partner" variant="secondary" size="lg">
-              Become a Sponsor
+            <Button href={CTA.sponsor.href} variant="secondary" size="lg">
+              {CTA.sponsor.label}
             </Button>
           </motion.div>
         </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { CTA } from "@/lib/constants";
 
 export function MobileCtaBar() {
   const [visible, setVisible] = useState(false);
@@ -23,8 +24,8 @@ export function MobileCtaBar() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/[0.06] bg-surface-elevated/95 p-4 backdrop-blur-xl lg:hidden">
-      <Button href="/tickets" className="w-full" showArrow>
-        Register Now
+      <Button href={CTA.register.href} className="w-full" showArrow>
+        {CTA.register.label}
       </Button>
     </div>
   );

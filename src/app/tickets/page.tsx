@@ -5,6 +5,7 @@ import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { CTA } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Tickets",
@@ -18,8 +19,9 @@ export default function TicketsPage() {
     <>
       <PageHero
         eyebrow="Tickets"
-        title="Select Your Conference Pass"
-        description="Pricing and early bird deadlines will be announced soon. Register your interest to receive priority access."
+        title="Register for DICE 2026"
+        description="Pricing opens soon. Select your pass tier and register interest for priority access when tickets go live."
+        secondaryCta={CTA.sponsor}
       />
       <Section variant="base">
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">

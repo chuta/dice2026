@@ -1,5 +1,6 @@
 import { agendaHighlights } from "@/content/site-data";
 import { Button } from "@/components/ui/button";
+import { CTA } from "@/lib/constants";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
@@ -42,7 +43,7 @@ export function AgendaSection() {
         ))}
       </div>
       <div className="mt-8 flex justify-center">
-        <Button href="/tickets" showArrow>Buy Your Pass</Button>
+        <Button href={CTA.register.href} showArrow>{CTA.register.label}</Button>
       </div>
     </Section>
   );

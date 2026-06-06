@@ -4,6 +4,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { CTA } from "@/lib/constants";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -38,7 +39,7 @@ export default async function TrackDetailPage({ params }: Props) {
         eyebrow="Conference Track"
         title={track.title}
         description={track.description}
-        cta={{ label: "Register Now", href: "/tickets" }}
+        cta={CTA.register}
         secondaryCta={{ label: "View Agenda", href: "/agenda" }}
       />
       <Section variant="base">

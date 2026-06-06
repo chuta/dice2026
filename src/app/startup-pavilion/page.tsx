@@ -3,10 +3,11 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { ECOSYSTEM_STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Startup Pavilion",
-  description: "Apply for the DICE 2026 Startup Pavilion — showcase your startup to 50+ investors and enterprise buyers.",
+  description: `Apply for the DICE 2026 Startup Pavilion — showcase your startup to ${ECOSYSTEM_STATS.investors} investors and enterprise buyers.`,
   path: "/startup-pavilion",
 });
 
@@ -16,7 +17,7 @@ export default function StartupPavilionPage() {
       <PageHero
         eyebrow="Startup Pavilion"
         title="Africa's Most Curated Startup Showcase"
-        description="100+ vetted startups meeting institutional investors, enterprise buyers, and government innovation programmes."
+        description={`${ECOSYSTEM_STATS.startups} vetted startups meeting institutional investors, enterprise buyers, and government innovation programmes.`}
         cta={{ label: "Apply Now", href: "#apply" }}
         secondaryCta={{ label: "Investor Forum", href: "/investor-forum" }}
       />

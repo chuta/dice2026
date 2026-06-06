@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
-import { SITE } from "@/lib/constants";
+import { CTA, SITE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Venue & Travel",
@@ -20,7 +20,7 @@ export default function VenuePage() {
         eyebrow="Venue & Travel"
         title={SITE.venue}
         description="Victoria Island, Lagos — Africa's financial capital. World-class convening facilities in the heart of the city's business district."
-        cta={{ label: "Register Now", href: "/tickets" }}
+        cta={CTA.register}
       />
       <Section variant="base">
         <div className="grid gap-6 md:grid-cols-3">

@@ -3,6 +3,7 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { ECOSYSTEM_STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Investor Forum",
@@ -17,7 +18,7 @@ export default function InvestorForumPage() {
       <PageHero
         eyebrow="Investor Forum"
         title="Curated Capital. Qualified Deal Flow."
-        description="An application-only forum connecting 50+ institutional investors with 100+ vetted startups building Africa's digital infrastructure."
+        description={`An application-only forum connecting ${ECOSYSTEM_STATS.investors} institutional investors with ${ECOSYSTEM_STATS.startups} vetted startups building Africa's digital infrastructure.`}
         cta={{ label: "Request Access", href: "#apply" }}
         secondaryCta={{ label: "Startup Pavilion", href: "/startup-pavilion" }}
       />

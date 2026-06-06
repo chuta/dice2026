@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
-import { SITE } from "@/lib/constants";
+import { CTA, SITE, STATS } from "@/lib/constants";
 
 export function SponsorsSection() {
   return (
@@ -12,13 +12,13 @@ export function SponsorsSection() {
       <SectionHeader
         eyebrow="Sponsors"
         title="Partner With Africa's Most Important Technology Gathering"
-        description="Join leading global brands investing in visibility among government delegations, institutional investors, and enterprise decision-makers."
+        description={`Position your brand before ${STATS[0].value} delegates, ${STATS[3].value} government agencies, and the institutional investors shaping Africa's digital economy.`}
         align="center"
         className="mx-auto text-center"
       />
 
       <GlassCard className="mb-10 overflow-hidden border-warm-gold/20 bg-[radial-gradient(ellipse_at_center,rgba(107,79,187,0.08)_0%,transparent_70%)]">
-        <p className="eyebrow mb-6 text-warm-gold">Title Sponsor</p>
+        <p className="eyebrow-gold mb-6">Title Sponsor</p>
         <div className="mx-auto max-w-md rounded-2xl bg-white p-10 md:p-12">
           <Image
             src="/images/logos/ubuntu-tribe.png"
@@ -29,7 +29,7 @@ export function SponsorsSection() {
           />
         </div>
         <p className="mt-6 text-center text-text-secondary">
-          {SITE.leadSponsor} — Building community-powered digital assets
+          {SITE.leadSponsor} — {SITE.leadSponsorTagline}
         </p>
         <div className="mt-4 flex justify-center">
           <Button href={SITE.leadSponsorUrl} variant="tertiary" showArrow external>
@@ -41,7 +41,7 @@ export function SponsorsSection() {
       <div className="space-y-8">
         {sponsorTiers.slice(0, 3).map((tier) => (
           <div key={tier.id}>
-            <p className="eyebrow mb-4 text-silver">{tier.name}</p>
+            <p className="eyebrow-muted mb-4">{tier.name}</p>
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {tier.logos.map((logo, i) => (
                 <GlassCard key={i} className="flex h-24 items-center justify-center" hover={false}>
@@ -53,9 +53,12 @@ export function SponsorsSection() {
         ))}
       </div>
 
-      <div className="mt-10 flex justify-center">
-        <Button href="/partner" size="lg" showArrow>
-          Become a Sponsor
+      <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Button href={CTA.sponsor.href} size="lg" showArrow>
+          {CTA.sponsor.label}
+        </Button>
+        <Button href="/contact" variant="secondary" size="lg">
+          Request Sponsorship Deck
         </Button>
       </div>
     </Section>

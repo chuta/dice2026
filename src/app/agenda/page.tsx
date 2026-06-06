@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
+import { CTA } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Agenda",
-  description: "DICE 2026 conference agenda — two days of keynotes, panels, workshops, and forum sessions in Lagos.",
+  description: "Decentralized Intelligence conference agenda; two days of keynotes, panels, workshops, and forum sessions in Lagos.",
   path: "/agenda",
-  keywords: ["DICE 2026 agenda", "tech conference schedule Lagos"],
+  keywords: ["DICE 2026 agenda", "tech conference schedule Lagos", "Decentralized Intelligence"],
 });
 
 export default function AgendaPage() {
@@ -22,7 +23,7 @@ export default function AgendaPage() {
         eyebrow="Agenda"
         title="Conference Programme"
         description="August 21–22, 2026. Full programme subject to updates as speakers and sessions are confirmed."
-        cta={{ label: "Buy Your Pass", href: "/tickets" }}
+        cta={CTA.register}
         secondaryCta={{ label: "Apply to Speak", href: "/contact" }}
       />
       {[1, 2].map((day) => {

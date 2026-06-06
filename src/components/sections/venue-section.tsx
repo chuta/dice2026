@@ -2,7 +2,7 @@ import { MapPinIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
-import { SITE } from "@/lib/constants";
+import { CTA, SITE } from "@/lib/constants";
 
 export function VenueSection() {
   return (
@@ -16,6 +16,7 @@ export function VenueSection() {
           </div>
         </div>
         <SectionHeader
+          compact
           eyebrow="Venue"
           title="The Civic Centre, Victoria Island"
           description="A world-class convening space in the heart of Lagos's financial district — accessible, prestigious, and equipped for institutional-scale events."
@@ -23,7 +24,7 @@ export function VenueSection() {
         />
       </div>
       <div className="mt-6 flex justify-center lg:hidden">
-        <Button href="/tickets" showArrow>Register Now</Button>
+        <Button href={CTA.register.href} showArrow>{CTA.register.label}</Button>
       </div>
     </Section>
   );
