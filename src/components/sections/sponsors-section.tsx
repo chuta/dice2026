@@ -1,0 +1,63 @@
+import Image from "next/image";
+import { sponsorTiers } from "@/content/site-data";
+import { Button } from "@/components/ui/button";
+import { GlassCard } from "@/components/ui/glass-card";
+import { Section } from "@/components/ui/section";
+import { SectionHeader } from "@/components/ui/section-header";
+import { SITE } from "@/lib/constants";
+
+export function SponsorsSection() {
+  return (
+    <Section id="sponsors" variant="base">
+      <SectionHeader
+        eyebrow="Sponsors"
+        title="Partner With Africa's Most Important Technology Gathering"
+        description="Join leading global brands investing in visibility among government delegations, institutional investors, and enterprise decision-makers."
+        align="center"
+        className="mx-auto text-center"
+      />
+
+      <GlassCard className="mb-10 overflow-hidden border-warm-gold/20 bg-[radial-gradient(ellipse_at_center,rgba(107,79,187,0.08)_0%,transparent_70%)]">
+        <p className="eyebrow mb-6 text-warm-gold">Title Sponsor</p>
+        <div className="mx-auto max-w-md rounded-2xl bg-white p-10 md:p-12">
+          <Image
+            src="/images/logos/ubuntu-tribe.png"
+            alt={SITE.leadSponsor}
+            width={280}
+            height={120}
+            className="mx-auto h-auto max-h-24 w-auto"
+          />
+        </div>
+        <p className="mt-6 text-center text-text-secondary">
+          {SITE.leadSponsor} — Building community-powered digital assets
+        </p>
+        <div className="mt-4 flex justify-center">
+          <Button href={SITE.leadSponsorUrl} variant="tertiary" showArrow external>
+            Visit utribe.one
+          </Button>
+        </div>
+      </GlassCard>
+
+      <div className="space-y-8">
+        {sponsorTiers.slice(0, 3).map((tier) => (
+          <div key={tier.id}>
+            <p className="eyebrow mb-4 text-silver">{tier.name}</p>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+              {tier.logos.map((logo, i) => (
+                <GlassCard key={i} className="flex h-24 items-center justify-center" hover={false}>
+                  <span className="text-sm text-text-muted">{logo.name}</span>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 flex justify-center">
+        <Button href="/partner" size="lg" showArrow>
+          Become a Sponsor
+        </Button>
+      </div>
+    </Section>
+  );
+}

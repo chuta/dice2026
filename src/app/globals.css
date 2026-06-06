@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-deep: #050508;
+  --color-surface-base: #0a0a12;
+  --color-surface-raised: #0d1117;
+  --color-surface-elevated: #141420;
+  --color-primary: #1b6eff;
+  --color-primary-hover: #3d85ff;
+  --color-accent-cyan: #00d4ff;
+  --color-midnight: #0f1b3d;
+  --color-midnight-blue: #162447;
+  --color-warm-gold: #f5a623;
+  --color-warm-amber: #e85d24;
+  --color-warm-magenta: #d61f8c;
+  --color-ecosystem-green: #4cd964;
+  --color-text-primary: #f0f2f5;
+  --color-text-secondary: #9ca3af;
+  --color-text-muted: #6b7280;
+  --color-silver: #c0c8d4;
+  --color-silver-muted: #8b95a8;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-spectrum-orange: #e85d24;
+  --color-spectrum-magenta: #d61f8c;
+  --color-spectrum-purple: #7b2d8e;
+  --color-spectrum-gold: #f5b800;
+  --color-spectrum-lime: #8dc63f;
+  --color-spectrum-forest: #1a6b3c;
+  --font-headline: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-deep text-text-primary font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-text-primary;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply rounded-2xl border border-white/[0.06] bg-white/[0.04] backdrop-blur-xl;
+  }
+
+  .glass-card-hover {
+    @apply transition-all duration-300 hover:border-accent-cyan/30 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)];
+  }
+
+  .text-gradient-cyan {
+    @apply bg-gradient-to-r from-primary to-accent-cyan bg-clip-text text-transparent;
+  }
+
+  .hero-atmosphere {
+    background: linear-gradient(180deg, #050508 0%, #0f1b3d 50%, #050508 100%);
+  }
+
+  .section-deep {
+    @apply bg-surface-deep;
+  }
+
+  .section-base {
+    @apply bg-surface-base;
+  }
+
+  .eyebrow {
+    @apply font-headline text-xs font-bold uppercase tracking-widest text-accent-cyan;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
