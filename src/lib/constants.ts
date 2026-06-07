@@ -20,7 +20,7 @@ export const SITE = {
   venue: "The Civic Centre",
   venueAddress: "Ozumba Mbadiwe Avenue, Victoria Island, Lagos, Nigeria",
   email: "info@dice2026.africa",
-  partnershipsEmail: "infos@dice2026.africa",
+  partnershipsEmail: "info@dice2026.africa",
 } as const;
 
 /** Canonical event scale — reference everywhere, never hardcode */
