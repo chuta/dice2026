@@ -21,7 +21,6 @@ import type {
   PersonaCard,
   Pillar,
   Speaker,
-  SponsorTier,
   Testimonial,
   TicketTier,
   Track,
@@ -315,58 +314,7 @@ export const ticketTiers: TicketTier[] = [
   },
 ];
 
-export const sponsorTiers: SponsorTier[] = [
-  {
-    id: "platinum",
-    name: "Platinum",
-    logos: [{ name: "Platinum tier available", placeholder: true }],
-  },
-  {
-    id: "gold",
-    name: "Gold",
-    logos: [
-      { name: "Gold tier available", placeholder: true },
-      { name: "Gold tier available", placeholder: true },
-    ],
-  },
-  {
-    id: "silver",
-    name: "Silver",
-    logos: [
-      { name: "Silver tier available", placeholder: true },
-      { name: "Silver tier available", placeholder: true },
-    ],
-  },
-  {
-    id: "innovation",
-    name: "Innovation Partner",
-    logos: [
-      { name: "Partner Announcing Soon", placeholder: true },
-      { name: "Partner Announcing Soon", placeholder: true },
-    ],
-  },
-  {
-    id: "ecosystem",
-    name: "Ecosystem Partner",
-    logos: [
-      { name: "Partner Announcing Soon", placeholder: true },
-      { name: "Partner Announcing Soon", placeholder: true },
-    ],
-  },
-  {
-    id: "government",
-    name: "Government Partner",
-    logos: [{ name: "Partner Announcing Soon", placeholder: true }],
-  },
-  {
-    id: "media",
-    name: "Media Partner",
-    logos: [
-      { name: "Partner Announcing Soon", placeholder: true },
-      { name: "Partner Announcing Soon", placeholder: true },
-    ],
-  },
-];
+export { sponsorshipTiers as sponsorTiers } from "@/content/sponsorship";
 
 export const experienceZones: ExperienceZone[] = [
   {

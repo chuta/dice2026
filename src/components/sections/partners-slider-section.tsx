@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { partnerOrganizations } from "@/content/partners";
+import { ecosystemPartners } from "@/content/partners";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 
@@ -44,10 +44,10 @@ function PartnerLogoCard({ name, logo }: { name: string; logo: string }) {
 export function PartnersSliderSection() {
   const visibleCount = useVisibleCount();
   const [index, setIndex] = useState(0);
-  const total = partnerOrganizations.length;
+  const total = ecosystemPartners.length;
 
   const visiblePartners = Array.from({ length: visibleCount }, (_, i) => {
-    return partnerOrganizations[(index + i) % total];
+    return ecosystemPartners[(index + i) % total];
   });
 
   const next = useCallback(() => {
@@ -99,7 +99,7 @@ export function PartnersSliderSection() {
         </button>
 
         <div className="mt-6 flex justify-center gap-2">
-          {partnerOrganizations.map((partner, i) => (
+          {ecosystemPartners.map((partner, i) => (
             <button
               key={partner.shortName}
               type="button"

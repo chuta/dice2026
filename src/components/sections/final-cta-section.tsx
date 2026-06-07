@@ -35,6 +35,9 @@ export function FinalCtaSection() {
           <Button href={CTA.sponsor.href} variant="secondary" size="lg">
             {CTA.sponsor.label}
           </Button>
+          <Button href={CTA.downloadSponsorDeck.href} variant="secondary" size="lg" showArrow>
+            {CTA.downloadSponsorDeck.label}
+          </Button>
         </div>
       </div>
     </section>

@@ -20,22 +20,29 @@ export const SITE = {
   venue: "The Civic Centre",
   venueAddress: "Ozumba Mbadiwe Avenue, Victoria Island, Lagos, Nigeria",
   email: "info@dice2026.africa",
+  partnershipsEmail: "infos@dice2026.africa",
 } as const;
 
 /** Canonical event scale — reference everywhere, never hardcode */
 export const STATS = [
-  { value: "2,000+", label: "Delegates" },
+  { value: "2,000+", label: "Attendees" },
   { value: "20+", label: "Speakers" },
-  { value: "50+", label: "Countries" },
-  { value: "10+", label: "Gov Agencies" },
+  { value: "10+", label: "Investors" },
+  { value: "20+", label: "Startups" },
+] as const;
+
+export const REACH_STATS = [
+  { value: "8+", label: "Government Agencies" },
+  { value: "15+", label: "African Countries" },
+  { value: "10+", label: "Media & Partners" },
 ] as const;
 
 export const FEATURED_SPEAKERS_COUNT = 8;
 
 export const ECOSYSTEM_STATS = {
-  startups: "40+",
+  startups: "20+",
   investors: "10+",
-  curatedMeetings: "20+",
+  curatedMeetings: "12+",
 } as const;
 
 export const NAV_LINKS = [
@@ -59,5 +66,6 @@ export const FORUM_LINKS = [
 export const CTA = {
   register: { label: "Register Now", href: "/tickets" },
   sponsor: { label: "Become a Sponsor", href: "/partner" },
+  downloadSponsorDeck: { label: "Download Sponsor Deck", href: "/sponsor-deck" },
   speak: { label: "Apply to Speak", href: "/contact" },
 } as const;

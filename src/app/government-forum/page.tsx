@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/forms/contact-form";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { createMetadata } from "@/lib/seo";
-import { STATS } from "@/lib/constants";
+import { REACH_STATS } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Government Forum",
@@ -18,7 +18,7 @@ export default function GovernmentForumPage() {
       <PageHero
         eyebrow="Government Forum"
         title="Policy Dialogue for Africa's Digital Economy"
-        description={`${STATS[3].value} government agencies convene for structured dialogue on AI regulation, digital assets, identity infrastructure, and cross-border coordination.`}
+        description={`${REACH_STATS[0].value} government agencies convene for structured dialogue on AI regulation, digital assets, identity infrastructure, and cross-border coordination.`}
         cta={{ label: "Register Delegation", href: "#register" }}
         secondaryCta={{ label: "Contact Policy Team", href: "/contact" }}
       />

@@ -38,9 +38,9 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <div className="pointer-events-none absolute inset-0 bg-surface-deep/75" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-surface-deep/90 via-surface-deep/60 to-surface-deep/40" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface-deep via-transparent to-surface-deep/50" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-surface-deep/50" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-surface-deep/65 via-surface-deep/35 to-surface-deep/20" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface-deep/70 via-transparent to-surface-deep/25" aria-hidden />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{

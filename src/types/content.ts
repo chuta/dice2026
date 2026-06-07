@@ -46,7 +46,30 @@ export interface TicketTier {
 export interface SponsorTier {
   id: string;
   name: string;
-  logos: { name: string; placeholder?: boolean }[];
+  description: string;
+  benefits: string[];
+  price?: string;
+  availability?: string;
+  recommended?: boolean;
+  logos: { name: string; logo?: string; placeholder?: boolean }[];
+}
+
+export interface SpecialSponsorshipOpportunity {
+  id: string;
+  title: string;
+  price: string;
+  description: string;
+}
+
+export interface ExhibitionPackage {
+  id: string;
+  name: string;
+  price: string;
+  tag: string;
+  size: string;
+  description: string;
+  benefits: string[];
+  recommended?: boolean;
 }
 
 export interface ExperienceZone {

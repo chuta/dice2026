@@ -15,6 +15,7 @@ interface ButtonProps {
   type?: "button" | "submit";
   showArrow?: boolean;
   external?: boolean;
+  download?: string;
   disabled?: boolean;
 }
 
@@ -43,6 +44,7 @@ export function Button({
   type = "button",
   showArrow = false,
   external = false,
+  download,
   disabled = false,
 }: ButtonProps) {
   const classes = cn(
@@ -71,7 +73,7 @@ export function Button({
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} download={download}>
         {content}
       </Link>
     );
