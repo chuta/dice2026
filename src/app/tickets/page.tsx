@@ -1,5 +1,6 @@
 import { ticketTiers } from "@/content/site-data";
 import { TicketTierCard } from "@/components/cards/ticket-tier-card";
+import { TicketProcessingPartners } from "@/components/sections/ticket-processing-partners";
 import { PageHero } from "@/components/layout/page-hero";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
 import { GlassCard } from "@/components/ui/glass-card";
@@ -29,6 +30,7 @@ export default function TicketsPage() {
             <TicketTierCard key={tier.id} tier={tier} />
           ))}
         </div>
+        <TicketProcessingPartners />
       </Section>
       <Section variant="deep">
         <GlassCard className="mx-auto max-w-xl text-center">

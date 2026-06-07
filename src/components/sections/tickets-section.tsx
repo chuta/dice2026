@@ -1,5 +1,6 @@
 import { ticketTiers } from "@/content/site-data";
 import { TicketTierCard } from "@/components/cards/ticket-tier-card";
+import { TicketProcessingPartners } from "@/components/sections/ticket-processing-partners";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 
@@ -18,6 +19,7 @@ export function TicketsSection() {
           <TicketTierCard key={tier.id} tier={tier} />
         ))}
       </div>
+      <TicketProcessingPartners />
     </Section>
   );
 }

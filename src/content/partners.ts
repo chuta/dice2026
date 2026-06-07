@@ -32,5 +32,15 @@ export const mediaPartners: PartnerOrganization[] = [
   { name: "Konga", shortName: "Konga", logo: "/images/partners/konga tv.png" },
 ];
 
+/** Ticket payment and processing partners */
+export const ticketProcessingPartners: PartnerOrganization[] = [
+  { name: "Korapay", shortName: "Korapay", logo: "/images/partners/korapay.png" },
+  {
+    name: "Blockspace Technologies LTD",
+    shortName: "Blockspace",
+    logo: "/images/partners/blockspace.jpg",
+  },
+];
+
 /** @deprecated Use ecosystemPartners */
 export const partnerOrganizations = ecosystemPartners;
