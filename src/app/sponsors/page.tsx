@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SponsorTierCard } from "@/components/cards/sponsor-tier-card";
+import { SponsorTierSummaryGrid } from "@/components/cards/sponsor-tier-summary-grid";
 import { PartnerLogoGrid } from "@/components/cards/partner-logo-grid";
 import { PageHero } from "@/components/layout/page-hero";
 import { Button } from "@/components/ui/button";
@@ -7,12 +7,7 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
 import { SectionHeader } from "@/components/ui/section-header";
 import { ecosystemPartners, mediaPartners } from "@/content/partners";
-import {
-  partnerJourneyStages,
-  specialSponsorshipOpportunities,
-  sponsorshipTiers,
-  whyPartnerBenefits,
-} from "@/content/sponsorship";
+import { sponsorshipTiers } from "@/content/sponsorship";
 import { createMetadata } from "@/lib/seo";
 import { CTA, SITE, STATS } from "@/lib/constants";
 
@@ -24,10 +19,7 @@ export const metadata = createMetadata({
 });
 
 const partnershipTiers = sponsorshipTiers.filter((t) =>
-  ["founding", "title", "platinum", "gold", "silver"].includes(t.id)
-);
-const partnerTiers = sponsorshipTiers.filter((t) =>
-  ["ecosystem", "government", "media"].includes(t.id)
+  ["founding", "title", "platinum", "gold", "silver", "bronze"].includes(t.id)
 );
 
 export default function SponsorsPage() {
@@ -35,8 +27,8 @@ export default function SponsorsPage() {
     <>
       <PageHero
         eyebrow="Sponsors"
-        title="Choose Your Level of Influence"
-        description={`Reach ${STATS[0].value} attendees including government officials, institutional investors, enterprise leaders, and global builders. Sponsorship is access to the conversations that shape Africa's economic architecture.`}
+        title="Partner With Africa's Most Important Technology Gathering"
+        description={`Reach ${STATS[0].value} attendees including government officials, institutional investors, enterprise leaders, and global builders.`}
         cta={CTA.sponsor}
         secondaryCta={CTA.downloadSponsorDeck}
       />
@@ -62,71 +54,14 @@ export default function SponsorsPage() {
       <Section variant="deep">
         <SectionHeader
           eyebrow="Partnership Tiers"
-          title="From Founding Partner to Silver"
-          description="Structured packages designed for global brands seeking executive visibility, exhibition presence, and institutional credibility. Some tiers are exclusive — allocated on a first-come basis."
+          title="Choose Your Level of Influence"
+          description="Sponsorship opportunities are limited and allocated on a first-come basis. Download the deck for full benefits, deliverables, and special opportunities."
           className="mb-10"
         />
-        <div className="grid gap-6 lg:grid-cols-2">
-          {partnershipTiers.map((tier) => (
-            <SponsorTierCard key={tier.id} tier={tier} />
-          ))}
-        </div>
+        <SponsorTierSummaryGrid tiers={partnershipTiers} />
       </Section>
 
       <Section variant="base">
-        <SectionHeader
-          eyebrow="Special Opportunities"
-          title="Own a Moment. Define Your Category."
-          description="Targeted sponsorships for high-impact zones, forums, and delegate touchpoints across both conference days."
-          className="mb-10"
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {specialSponsorshipOpportunities.map((opp) => (
-            <GlassCard key={opp.id} className="flex h-full flex-col">
-              <p className="font-mono text-lg font-semibold text-accent-cyan">{opp.price}</p>
-              <h3 className="mt-2 font-headline text-sm font-semibold leading-snug">{opp.title}</h3>
-              <p className="mt-2 flex-1 text-xs text-text-secondary">{opp.description}</p>
-            </GlassCard>
-          ))}
-        </div>
-      </Section>
-
-      <Section variant="deep">
-        <SectionHeader
-          eyebrow="Why Partner"
-          title="More Than Visibility. Strategic Influence."
-          description="Sponsorship is not logo placement. It is access to the conversations, relationships, and decisions that shape Africa's economic architecture."
-          className="mb-10"
-        />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {whyPartnerBenefits.map((benefit) => (
-            <GlassCard key={benefit.title}>
-              <h3 className="font-headline text-lg font-semibold">{benefit.title}</h3>
-              <p className="mt-2 text-sm text-text-secondary">{benefit.description}</p>
-            </GlassCard>
-          ))}
-        </div>
-      </Section>
-
-      <Section variant="base">
-        <SectionHeader
-          eyebrow="Partner Journey"
-          title="From Brand to Business Outcomes. In Two Days."
-          description="A structured path from visibility through executive access to measurable commercial outcomes."
-          className="mb-10"
-        />
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {partnerJourneyStages.map((stage) => (
-            <GlassCard key={stage.num} className="text-center">
-              <p className="font-mono text-3xl font-bold text-accent-cyan">{stage.num}</p>
-              <h3 className="mt-3 font-headline text-lg font-semibold">{stage.title}</h3>
-              <p className="mt-2 text-sm text-text-secondary">{stage.description}</p>
-            </GlassCard>
-          ))}
-        </div>
-      </Section>
-
-      <Section variant="deep">
         <SectionHeader
           eyebrow="Institutional Partners"
           title="Ecosystem & Government Partners"
@@ -134,16 +69,9 @@ export default function SponsorsPage() {
           className="mb-8"
         />
         <PartnerLogoGrid partners={ecosystemPartners} />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {partnerTiers
-            .filter((t) => t.id !== "media")
-            .map((tier) => (
-              <SponsorTierCard key={tier.id} tier={tier} showLogos={false} />
-            ))}
-        </div>
       </Section>
 
-      <Section variant="base">
+      <Section variant="deep">
         <SectionHeader
           eyebrow="Media Partners"
           title="Official Media Amplification"
@@ -151,16 +79,9 @@ export default function SponsorsPage() {
           className="mb-8"
         />
         <PartnerLogoGrid partners={mediaPartners} />
-        {partnerTiers
-          .filter((t) => t.id === "media")
-          .map((tier) => (
-            <div key={tier.id} className="mt-10">
-              <SponsorTierCard tier={tier} showLogos={false} />
-            </div>
-          ))}
       </Section>
 
-      <Section variant="deep" containerClassName="text-center">
+      <Section variant="base" containerClassName="text-center">
         <p className="text-sm text-text-secondary">
           Sponsorship enquiries:{" "}
           <a href={`mailto:${SITE.partnershipsEmail}`} className="text-accent-cyan hover:underline">

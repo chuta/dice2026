@@ -30,11 +30,12 @@ export default function PartnerPage() {
         <ContactForm
           defaultSubject="Sponsorship"
           subjects={[
-            "Sponsorship, Founding Partner ($50,000)",
-            "Sponsorship, Title Sponsor ($25,000)",
-            "Sponsorship, Platinum Partner ($10,000)",
-            "Sponsorship, Gold Partner ($5,000)",
-            "Sponsorship, Silver Partner ($2,500)",
+            "Sponsorship, Founding Partner",
+            "Sponsorship, Title Sponsor",
+            "Sponsorship, Platinum Partner",
+            "Sponsorship, Gold Partner",
+            "Sponsorship, Silver Partner",
+            "Sponsorship, Bronze Partner",
             "Special Opportunity",
             "Exhibitor",
             "Ecosystem Partner",

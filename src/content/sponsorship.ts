@@ -97,7 +97,7 @@ export const sponsorshipTiers: SponsorTier[] = [
     ],
   },
   {
-    id: "Bronze",
+    id: "bronze",
     name: "Bronze Partner",
     price: "$1,500",
     description: "Targeted visibility with exhibition table placement and delegate access.",
@@ -108,8 +108,8 @@ export const sponsorshipTiers: SponsorTier[] = [
       "2 delegate passes",
     ],
     logos: [
-      { name: "Silver partnership available", placeholder: true },
-      { name: "Silver partnership available", placeholder: true },
+      { name: "Bronze partnership available", placeholder: true },
+      { name: "Bronze partnership available", placeholder: true },
     ],
   },
   {

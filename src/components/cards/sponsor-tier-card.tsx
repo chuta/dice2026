@@ -24,8 +24,8 @@ export function SponsorTierCard({
         </span>
       )}
       <h3 className="font-headline text-xl font-semibold">{tier.name}</h3>
-      {tier.price && (
-        <p className="mt-2 font-mono text-2xl font-semibold text-accent-cyan">{tier.price}</p>
+      {tier.price !== undefined && (
+        <p className="mt-2 text-sm font-medium text-accent-cyan">Price Available on Request</p>
       )}
       {tier.availability && (
         <p className="mt-1 text-xs italic text-text-muted">{tier.availability}</p>
