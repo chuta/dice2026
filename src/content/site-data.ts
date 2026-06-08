@@ -39,10 +39,10 @@ export const tracks: Track[] = [
   },
   {
     slug: "tokenized-markets",
-    title: "Tokenized Markets & Digital Assets",
-    shortTitle: "Tokenized Markets",
+    title: "Tokenized Markets, Real-World Assets & Digital Capital Formation",
+    shortTitle: "RWA & Digital Capital",
     description:
-      "Institutional digital asset frameworks, market structure evolution, and regulatory alignment across borders.",
+      "The capital layer of Africa's digital economy — digital assets, real-world asset tokenization, institutional finance, and cross-border capital markets.",
     sessionCount: 5,
     color: "#F5B800",
     icon: CircleStackIcon,
@@ -194,8 +194,8 @@ export const agendaHighlights: AgendaSession[] = [
   {
     id: "3",
     time: "14:00",
-    title: "Regulatory Frameworks for Tokenized Markets Across Africa",
-    track: "Tokenized Markets",
+    title: "Real-World Assets & Digital Capital Formation Across Africa",
+    track: "RWA & Digital Capital",
     trackColor: "#F5B800",
     type: "panel",
     day: 1,

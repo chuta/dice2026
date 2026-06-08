@@ -153,6 +153,7 @@ export function Header() {
                 <p className="eyebrow mb-3">Institutional</p>
                 <div className="space-y-1">
                   {[
+                    { href: "/rwa-summit", label: "Africa RWA Summit" },
                     { href: "/government-forum", label: "Government Forum" },
                     { href: "/investor-forum", label: "Investor Forum" },
                     { href: "/media", label: "Media Centre" },

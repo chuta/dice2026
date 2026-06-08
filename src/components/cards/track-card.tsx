@@ -14,7 +14,7 @@ export function TrackCard({ track }: { track: Track }) {
         >
           <Icon className="h-7 w-7" style={{ color: track.color }} />
         </div>
-        <h3 className="font-headline text-lg font-semibold text-text-primary group-hover:text-accent-cyan">
+        <h3 className="font-headline text-base font-semibold leading-snug text-text-primary group-hover:text-accent-cyan lg:text-lg">
           {track.title}
         </h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-text-secondary">{track.description}</p>

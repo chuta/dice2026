@@ -55,6 +55,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const FORUM_LINKS = [
+  { href: "/rwa-summit", label: "Africa RWA Summit" },
   { href: "/startup-pavilion", label: "Startup Pavilion" },
   { href: "/investor-forum", label: "Investor Forum" },
   { href: "/government-forum", label: "Government Forum" },

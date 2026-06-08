@@ -2,6 +2,11 @@ import type { ComponentType, SVGProps } from "react";
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
+export interface TrackPillar {
+  title: string;
+  topics: string[];
+}
+
 export interface Track {
   slug: string;
   title: string;
@@ -10,6 +15,18 @@ export interface Track {
   sessionCount: number;
   color: string;
   icon: IconComponent;
+}
+
+export interface SubForum {
+  slug: string;
+  path: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  poweredBy: string;
+  poweredByLogo: string;
+  programming: string[];
+  audiences: string[];
 }
 
 export interface Speaker {

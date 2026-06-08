@@ -17,6 +17,7 @@ const footerLinks = {
   ],
   participate: [
     { href: "/speakers", label: "Apply to Speak" },
+    { href: "/rwa-summit", label: "Africa RWA Summit" },
     { href: "/startup-pavilion", label: "Startup Pavilion" },
     { href: "/exhibition", label: "Exhibition" },
     { href: "/investor-forum", label: "Investor Forum" },
