@@ -11,7 +11,6 @@ import {
   FingerPrintIcon,
   LightBulbIcon,
   RocketLaunchIcon,
-  ServerStackIcon,
   CircleStackIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
@@ -42,7 +41,7 @@ export const tracks: Track[] = [
     title: "Tokenized Markets, Real-World Assets & Digital Capital Formation",
     shortTitle: "RWA & Digital Capital",
     description:
-      "The capital layer of Africa's digital economy — digital assets, real-world asset tokenization, institutional finance, and cross-border capital markets.",
+      "The capital layer of Africa's digital economy, digital assets, real-world asset tokenization, institutional finance, and cross-border capital markets.",
     sessionCount: 5,
     color: "#F5B800",
     icon: CircleStackIcon,
@@ -58,14 +57,14 @@ export const tracks: Track[] = [
     icon: CurrencyDollarIcon,
   },
   {
-    slug: "ai-blockchain-infrastructure",
-    title: "AI + Blockchain Infrastructure",
-    shortTitle: "AI + Blockchain",
+    slug: "ai-employment-resilience",
+    title: "AI, Employment & Economic Resilience",
+    shortTitle: "AI & Economic Resilience",
     description:
-      "Converged compute, verification layers, and decentralized systems powering intelligent economies.",
+      "Strategic pathways for workforce transformation, digital industrialization, technology sovereignty, and inclusive economic participation as AI reshapes global production.",
     sessionCount: 6,
     color: "#8DC63F",
-    icon: ServerStackIcon,
+    icon: ChartBarIcon,
   },
   {
     slug: "digital-identity-trust",
@@ -92,7 +91,7 @@ export const tracks: Track[] = [
     title: "Future of Work in Autonomous Economies",
     shortTitle: "Future of Work",
     description:
-      "Human-AI collaboration, workforce evolution, and economic models in increasingly autonomous systems.",
+      "Talent, skills, and the human-AI interface, how individuals, teams, and enterprises adapt to work in increasingly autonomous systems.",
     sessionCount: 5,
     color: "#E85D24",
     icon: UserGroupIcon,
@@ -304,7 +303,7 @@ export const ticketTiers: TicketTier[] = [
     id: "group",
     name: "Group Pass (5+)",
     fullPriceNgn: 100_000,
-    priceNote: "Team registration — 5+ attendees",
+    priceNote: "Team registration, 5+ attendees",
     inclusions: [
       "All Standard Pass benefits per attendee",
       "Discounted group rate",

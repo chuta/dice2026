@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/layout/page-hero";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Section } from "@/components/ui/section";
@@ -51,6 +52,30 @@ export default function AboutPage() {
         </div>
       </Section>
       <Section variant="deep">
+        <GlassCard>
+          <p className="eyebrow mb-3">Africa at an Inflection Point</p>
+          <h2 className="font-headline text-2xl font-bold">Designing an Inclusive Autonomous Digital Economy</h2>
+          <p className="mt-4 leading-relaxed text-text-secondary">
+            Artificial intelligence is redefining work, production, and the economic value of labour. For developing
+            economies, the challenge is not merely technological — it is economic, strategic, and generational.
+            Decisions on AI, blockchain, digital assets, identity, and data governance will determine whether
+            future generations participate meaningfully in the global economy or are excluded from its most
+            productive sectors.
+          </p>
+          <p className="mt-4 leading-relaxed text-text-secondary">
+            DICE 2026 brings together policymakers, innovators, investors, regulators, and industry leaders to
+            design practical pathways for workforce transformation, digital industrialization, technology
+            sovereignty, and economic resilience.
+          </p>
+          <Link
+            href="/tracks/ai-employment-resilience"
+            className="mt-6 inline-block text-sm font-medium text-accent-cyan hover:underline"
+          >
+            Explore the AI, Employment &amp; Economic Resilience track →
+          </Link>
+        </GlassCard>
+      </Section>
+      <Section variant="base">
         <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="eyebrow mb-3">Organizer</p>

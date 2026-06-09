@@ -10,7 +10,7 @@ export function TracksSection() {
       <SectionHeader
         eyebrow="Conference Tracks"
         title="Seven Programmes Defining Africa's Digital Future"
-        description="From agentic AI to government-as-platform, each track delivers institutional-depth programming for decision-makers and builders."
+        description="From agentic AI and economic resilience to digital capital formation and government-as-platform — institutional-depth programming for decision-makers and builders."
         cta={{ label: "Explore All Tracks", href: "/tracks" }}
       />
       <div className="flex gap-4 overflow-x-auto pb-4 lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
