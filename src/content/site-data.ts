@@ -171,6 +171,42 @@ export const speakers: Speaker[] = [
     featured: true,
     announced: true,
   },
+  {
+    slug: "rutherford-atayobo",
+    name: "Rutherford Atayobo",
+    title: "Chief Operating Officer",
+    organization: "Sinverse",
+    image: "/images/speakers/rutherford-atayobo.jpg",
+    featured: true,
+    announced: true,
+  },
+  {
+    slug: "philip-uwumarogie",
+    name: "Philip Uwumarogie",
+    title: "Chief Technology Officer",
+    organization: "LANI Group",
+    image: "/images/speakers/philip-uwumarogie.jpg",
+    featured: true,
+    announced: true,
+  },
+  {
+    slug: "hrm-khadijat-abdulkadir",
+    name: "HRM Khadijat Abdulkadir",
+    title: "Social Entrepreneur & Founder",
+    organization: "INGRYD Academy · Digital African Woman",
+    image: "/images/speakers/hrm-khadijat-abdulkadir.jpg",
+    featured: true,
+    announced: true,
+  },
+  {
+    slug: "oluseyi-akindeinde",
+    name: "Oluseyi Akindeinde",
+    title: "Founder, Hyperspace Technologies & NeuRaL AI",
+    organization: "Inventor — cipherKEY, cipherCHIP, bioKEY, Neural Loop",
+    image: "/images/speakers/oluseyi-akindeinde.jpg",
+    featured: true,
+    announced: true,
+  },
 ];
 
 export const agendaHighlights: AgendaSession[] = [

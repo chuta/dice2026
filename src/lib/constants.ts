@@ -37,7 +37,7 @@ export const REACH_STATS = [
   { value: "10+", label: "Media & Partners" },
 ] as const;
 
-export const FEATURED_SPEAKERS_COUNT = 8;
+export const FEATURED_SPEAKERS_COUNT = 12;
 
 export const ECOSYSTEM_STATS = {
   startups: "20+",
